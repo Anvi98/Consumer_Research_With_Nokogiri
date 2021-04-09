@@ -22,6 +22,8 @@ Metrics/BlockLength:
 
 Style/Documentation:
   Enabled: false
+Style/CombinableLoops:
+  Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
 Style/EachForSimpleLoop:
@@ -32,8 +34,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
-  Style/RedundantArgument:
-    Enabled: false
+Style/RedundantArgument:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
