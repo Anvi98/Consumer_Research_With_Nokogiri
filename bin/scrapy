@@ -51,7 +51,7 @@ elsif input =~ /[0-9]/ && input.to_i.zero?
   puts "\t        * Stats of Last 20 reviews from customers *\n"
   puts "\t        ------------------------------------------"
   print "\n Review Score = 5 (Excellent): #{stats[0]}\n Review Score = 4 (Good): #{stats[1]}\n Review Score < 3 (Bad): #{stats[2]}\n"
-  puts UnicodePlot.barplot(data: { 'Excellent': stats[0], 'Good': stats[1], 'Bad': stats[2] }, title: 'Revolut')
+  puts UnicodePlot.barplot(data: { Excellent: stats[0], Good: stats[1], Bad: stats[2] }, title: 'Revolut')
 
 end
 
