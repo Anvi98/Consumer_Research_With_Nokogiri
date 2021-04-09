@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'httparty'
+
 class Scraper
   attr_reader :url, :urls_cat, :parsed_html
 

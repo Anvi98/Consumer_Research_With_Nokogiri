@@ -52,6 +52,11 @@ Be sure to have a Github account and that this account is connected locally on y
   ```
   git clone git@github.com:Anvi98/Consumer_Research_With_Nokogiri.git
   ```
+  Before moving to the repository cloned, run in you terminal:
+  ````
+  bundle install
+  ````
+To make sure you have all gems installed.
 
 * Move to the repository cloned
 
