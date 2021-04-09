@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+require 'nokogiri'
+require 'httparty'
+require 'byebug'
+require_relative '../lib/core'
+require 'unicode_plot'
+
+session = Scraper.new
+
+last_stat = session.review_resume
+total_review = session.total_review_num
+score = session.score
+stats = session.resume_category
+def draw(lengthy)
+  1.upto(lengthy) do
+    print '-' * 3
+  end
+  puts ''
+end
+(system 'cls') || (system 'clear')
+puts "\n\t\t -- Consumer Research Analysis via Trustpilot --\n"
+puts "\ntotal reviews: #{total_review}"
+puts "        Score: #{score}/5"
+
+draw(25)
+puts "\t Last Review Title:    \t | \t #{last_stat[:title]}.\t\s\s"
+draw(25)
+puts "\t Last Review Score:    \t | \t #{last_stat[:score]} / 5."
+draw(25)
+puts "\t Last Review Date:     \t | \t #{last_stat[:date]}."
+draw(25)
+puts "\t Last Review Content:  \t | \t press 1 to see the comment."
+draw(25)
+
+draw(25)
+puts "- Press 0 to see stats of last 20 reviews.\n"
+puts "- Press 1 to see the last comment.\n"
+print ': '
+input = gets.chomp
+
+until input =~ /[0-9]/ && input.to_i == 1 || input =~ /[0-9]/ && input.to_i.zero?
+  print "Enter a valid number (0 or 1): \n"
+  input = gets.chomp
+end
+
+if input =~ /[0-9]/ && input.to_i == 1
+  puts "\nReview Content: \n#{last_stat[:content]}.\n\n"
+
+elsif input =~ /[0-9]/ && input.to_i.zero?
+  puts "\t        ------------------------------------------"
+  puts "\t        * Stats of Last 20 reviews from customers *\n"
+  puts "\t        ------------------------------------------"
+  print "\n Review Score = 5 (Excellent): #{stats[0]}\n Review Score = 4 (Good): #{stats[1]}\n Review Score < 3 (Bad): #{stats[2]}\n"
+  puts UnicodePlot.barplot(data: { Excellent: stats[0], Good: stats[1], Bad: stats[2] }, title: 'Revolut')
+
+end
+
+File.open('today.txt', 'w') { |f| f.write("Last Review Date:  #{last_stat[:date]}.\nLast Review Title: #{last_stat[:title]}\nLast review Comment: #{last_stat[:content]}\nLast Review Score: #{last_stat[:score]} / 5.") }
+
+puts "File saved in the root folder for future analysis.\n"
+puts ''
