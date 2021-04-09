@@ -37,10 +37,16 @@ puts "- Press 0 to see stats of last 20 reviews.\n"
 puts "- Press 1 to see the last comment.\n"
 print ': '
 input = gets.chomp
-input = input.to_i
-puts "\nReview Content: \n#{last_stat[:content]}.\n\n" if input.to_i == 1
 
-if input.to_i.zero?
+until input =~ /[0-9]/ && input.to_i == 1 || input =~ /[0-9]/ && input.to_i.zero?
+  print "Enter a valid number (0 or 1): \n"
+  input = gets.chomp
+end
+
+if input =~ /[0-9]/ && input.to_i == 1
+  puts "\nReview Content: \n#{last_stat[:content]}.\n\n"
+
+elsif input =~ /[0-9]/ && input.to_i.zero?
   puts "\t        ------------------------------------------"
   puts "\t        * Stats of Last 20 reviews from customers *\n"
   puts "\t        ------------------------------------------"
