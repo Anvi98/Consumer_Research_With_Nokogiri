@@ -4,6 +4,7 @@ GEM
     ast (2.4.2)
     byebug (11.1.3)
     diff-lcs (1.4.4)
+    enumerable-statistics (2.0.3)
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -43,6 +44,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 2.0)
     ruby-progressbar (1.11.0)
     unicode-display_width (1.7.0)
+    unicode_plot (0.0.5)
+      enumerable-statistics (>= 2.0.1)
 
 PLATFORMS
   x86_64-darwin-20
@@ -53,6 +56,7 @@ DEPENDENCIES
   nokogiri
   rspec
   rubocop (~> 0.81.0)
+  unicode_plot
 
 BUNDLED WITH
    2.2.15
