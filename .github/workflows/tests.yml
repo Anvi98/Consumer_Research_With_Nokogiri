@@ -15,7 +15,7 @@ jobs:
         run: |
           gem install nokogiri
           gem install byebug
-          gem httparty
+          gem install httparty
           gem install --no-document rspec:'~>3.0'
       - name: RSpec Report
         run: rspec --force-color --format documentation
