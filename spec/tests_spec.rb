@@ -1,6 +1,4 @@
 require_relative '../lib/core'
-require 'nokogiri'
-require 'httparty'
 
 describe Scraper do
   describe '#total_review_num' do
@@ -24,7 +22,7 @@ describe Scraper do
       expect(k.is_a?(Float)).to eql(true)
     end
 
-    it 'returns a float number representing the average score of appreciation of Revolut' do
+    it 'returns false if number representing the average score of appreciation of Revolut is not integer' do
       temp = Scraper.new
       k = temp.score
       expect(k.is_a?(String)).to eql(false)
