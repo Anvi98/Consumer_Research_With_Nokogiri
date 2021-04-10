@@ -90,7 +90,7 @@ ENJOY !!
 👤 **Anvi Alex**
 
 - GitHub: [Anvi98](https://github.com/anvi98)
-- Twitter: [@twitterhandle](https://twitter.com/anvi_al)
+- Twitter: [@anvi_al](https://twitter.com/anvi_al)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/anvi-alex-eponon/)
 
 ## 🤝 Contributing
